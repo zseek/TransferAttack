@@ -1,3 +1,37 @@
+inception_v3 | inception_v4 | resnetv2_50 | resnetv2_101 | inception_resnet_v2
+
 adv_data/fgsm/inception_v3| 77.3 | 40.4 | 34.3 | 28.8 | 37.3 |
 adv_data/ifgsm/inception_v3| 99.4 | 29.4 | 19.4 | 13.7 | 23.0 |
 adv_data/mifgsm/inception_v3| 100.0 | 55.0 | 43.3 | 37.4 | 50.9 |
+adv_data/nifgsm/inception_v3| 99.8 | 61.7 | 48.2 | 42.4 | 59.7 |
+adv_data/fmifgsm/inception_v3| 100.0 | 77.4 | 63.7 | 61.6 | 76.7 |
+adv_data/pgn/inception_v3| 99.7 | 90.9 | 77.4 | 74.4 | 87.7 |
+
+adv_data/fgsm/inception_v4| 35.6 | 50.6 | 24.8 | 21.4 | 28.8 |
+adv_data/ifgsm/inception_v4| 20.6 | 93.2 | 15.6 | 12.9 | 20.8 |
+adv_data/mifgsm/inception_v4| 50.3 | 98.5 | 38.3 | 35.0 | 45.6 |
+adv_data/nifgsm/inception_v4| 52.8 | 99.0 | 42.3 | 38.3 | 51.8 |
+adv_data/fmifgsm/inception_v4| 75.1 | 99.0 | 64.4 | 60.7 | 71.8 |
+adv_data/pgn/inception_v4| 90.3 | 98.9 | 78.8 | 75.9 | 86.8 |
+
+adv_data/fgsm/resnetv2_50| 25.8 | 20.9 | 31.8 | 18.0 | 18.2 |
+adv_data/ifgsm/resnetv2_50| 15.9 | 12.2 | 64.2 | 13.7 | 11.2 |
+adv_data/mifgsm/resnetv2_50| 31.9 | 29.7 | 82.8 | 34.9 | 26.1 |
+adv_data/nifgsm/resnetv2_50| 32.6 | 30.3 | 84.7 | 37.0 | 28.8 |
+adv_data/fmifgsm/resnetv2_50| 55.1 | 54.7 | 87.7 | 61.7 | 51.9 |
+adv_data/pgn/resnetv2_50| 79.8 | 81.2 | 96.8 | 85.9 | 76.5 |
+
+adv_data/fgsm/resnetv2_101| 24.4 | 18.8 | 18.4 | 23.2 | 16.7 |
+adv_data/ifgsm/resnetv2_101| 15.7 | 13.0 | 17.4 | 52.6 | 10.8 |
+adv_data/mifgsm/resnetv2_101| 32.2 | 30.6 | 41.2 | 80.0 | 26.3 |
+adv_data/nifgsm/resnetv2_101| 33.4 | 31.0 | 43.0 | 79.0 | 27.9 |
+adv_data/fmifgsm/resnetv2_101| 52.2 | 50.4 | 61.2 | 84.2 | 49.3 |
+adv_data/pgn/resnetv2_101| 77.5 | 76.5 | 85.2 | 93.7 | 74.8 |
+
+adv_data/fgsm/inception_resnet_v2| 35.1 | 29.4 | 23.9 | 21.6 | 42.2 |
+adv_data/ifgsm/inception_resnet_v2| 23.3 | 25.5 | 15.3 | 13.2 | 90.5 |
+adv_data/mifgsm/inception_resnet_v2| 53.2 | 51.3 | 40.3 | 36.2 | 94.7 |
+adv_data/nifgsm/inception_resnet_v2| 52.6 | 54.4 | 39.6 | 34.2 | 95.6 |
+adv_data/fmifgsm/inception_resnet_v2| 74.0 | 74.2 | 64.9 | 61.1 | 95.4 |
+adv_data/pgn/inception_resnet_v2| 89.2 | 89.5 | 79.9 | 77.2 | 98.0 |
+
