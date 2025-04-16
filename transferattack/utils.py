@@ -17,7 +17,8 @@ img_max, img_min = 1., 0  # 像素值范围（归一化后）
 cnn_model_paper = ['inception_v3', 'inception_v4', 'resnetv2_50', 'resnetv2_101', 'inception_resnet_v2']
 
 # 论文中使用的 Vision Transformer 模型列表
-vit_model_paper = ['vit_base_patch16_224', 'pit_b_224', 'visformer_small', 'swin_tiny_patch4_window7_224']
+# vit_model_paper = ['vit_base_patch16_224', 'pit_b_224', 'visformer_small', 'swin_tiny_patch4_window7_224']
+vit_model_paper = []
 
 # 从 torchvision 加载的 CNN 模型列表
 cnn_model_pkg = ['vgg19', 'resnet18', 'resnet101', 'resnext50_32x4d', 'densenet121', 'mobilenet_v2']
