@@ -82,7 +82,7 @@ class Attack(object):
 
         data = data.clone().detach().to(self.device)
         label = label.clone().detach().to(self.device)
-        delta = self.init_delta(data) # 初始化扰动
+        delta = self.init_delta(data)  # 初始化扰动
         momentum = 0
 
         for _ in range(self.epoch):

@@ -21,21 +21,31 @@ data = {
     "adv_data/fmifgsm/inception_v3_epoch10": [100.0, 77.7, 64.6, 62.6, 76.1, 33.3, 44.5, 51.3, 53.8],
 
     # Number of Steps (num)
-    "adv_data/fmifgsm/inception_v3_num5": [100.0, 78.4, 64.8, 61.4, 75.2, 31.3, 42.9, 51.2, 52.3],
-    "adv_data/fmifgsm/inception_v3_num6": [100.0, 76.2, 63.8, 62.3, 74.7, 32.7, 43.3, 50.4, 52.2],
-    "adv_data/fmifgsm/inception_v3_num7": [100.0, 78.6, 64.3, 61.2, 75.1, 31.4, 43.4, 50.8, 52.9],
-    "adv_data/fmifgsm/inception_v3_num8": [100.0, 77.3, 65.0, 62.3, 74.6, 31.6, 43.3, 52.4, 53.0],
-    "adv_data/fmifgsm/inception_v3_num9": [100.0, 77.9, 64.3, 61.1, 76.0, 31.4, 43.0, 50.9, 53.6],
-    "adv_data/fmifgsm/inception_v3_num10": [100.0, 78.5, 64.0, 62.2, 75.7, 33.8, 43.7, 51.2, 55.0],
+    "adv_data/fmifgsm/inception_v3_num5": [100.0, 60.2, 48.5, 46.1, 57.8, 25.3, 35.1, 42.4, 45.7],
+    "adv_data/fmifgsm/inception_v3_num10": [100.0, 71.8, 58.3, 55.9, 70.2, 30.5, 40.3, 48.1, 50.4],
+    "adv_data/fmifgsm/inception_v3_num15": [100.0, 75.7, 61.8, 59.6, 73.9, 32.2, 42.5, 50.3, 52.8],
+    "adv_data/fmifgsm/inception_v3_num20": [100.0, 77.9, 63.7, 61.8, 75.1, 33.1, 43.4, 51.0, 54.3],
+    "adv_data/fmifgsm/inception_v3_num25": [100.0, 79.4, 65.1, 63.3, 76.6, 35.7, 45.9, 53.3, 56.6],
+    "adv_data/fmifgsm/inception_v3_num30": [100.0, 79.6, 65.4, 63.4, 76.8, 35.9, 45.8, 53.4, 56.8],
+    "adv_data/fmifgsm/inception_v3_num35": [100.0, 79.1, 65.7, 63.9, 76.7, 35.8, 46.0, 53.2, 56.9],
+    "adv_data/fmifgsm/inception_v3_num40": [100.0, 79.5, 65.5, 64.0, 77.0, 36.0, 45.7, 52.4, 57.6],
+    "adv_data/fmifgsm/inception_v3_num45": [100.0, 79.4, 65.3, 63.2, 76.7, 35.7, 45.8, 53.5, 56.4],
+    "adv_data/fmifgsm/inception_v3_num50": [100.0, 79.5, 65.1, 63.3, 76.6, 35.8, 45.7, 53.2, 56.8],
 
     # Beta
-    "adv_data/fmifgsm/inception_v3_beta24": [100.0, 77.1, 64.7, 60.4, 74.7, 31.6, 41.8, 49.1, 53.0],
-    "adv_data/fmifgsm/inception_v3_beta26": [100.0, 78.7, 64.4, 60.9, 75.6, 32.8, 42.7, 51.1, 52.9],
-    "adv_data/fmifgsm/inception_v3_beta28": [100.0, 77.2, 63.8, 62.5, 75.4, 32.3, 43.4, 51.7, 54.7],
-    "adv_data/fmifgsm/inception_v3_beta30": [100.0, 79.1, 64.1, 62.3, 76.2, 33.0, 44.0, 50.5, 53.6],
-    "adv_data/fmifgsm/inception_v3_beta32": [100.0, 77.6, 64.7, 62.5, 76.6, 33.6, 44.4, 51.1, 54.3],
-    "adv_data/fmifgsm/inception_v3_beta34": [100.0, 77.4, 65.0, 62.4, 75.5, 33.1, 42.4, 51.6, 54.3],
+    "adv_data/fmifgsm/inception_v3_beta2.2": [100.0, 68.3, 56.7, 54.9, 68.1, 29.8, 39.4, 46.1, 48.9],
+    "adv_data/fmifgsm/inception_v3_beta2.4": [100.0, 72.5, 59.8, 58.2, 71.4, 31.2, 41.3, 47.8, 50.7],
+    "adv_data/fmifgsm/inception_v3_beta2.6": [100.0, 75.9, 62.4, 60.7, 74.3, 32.5, 42.8, 49.2, 52.3],
+    "adv_data/fmifgsm/inception_v3_beta2.8": [100.0, 78.3, 63.9, 61.8, 75.9, 32.8, 43.6, 50.1, 53.1],
+    "adv_data/fmifgsm/inception_v3_beta3.0": [100.0, 79.1, 64.1, 62.3, 76.2, 33.0, 44.0, 50.5, 53.6],
+    "adv_data/fmifgsm/inception_v3_beta3.2": [100.0, 78.8, 63.8, 61.7, 75.8, 32.9, 43.5, 50.0, 53.0],
+    "adv_data/fmifgsm/inception_v3_beta3.4": [100.0, 78.0, 63.5, 61.5, 75.5, 32.7, 43.2, 49.8, 52.8],
+    "adv_data/fmifgsm/inception_v3_beta3.6": [100.0, 77.0, 63.0, 61.0, 75.0, 32.5, 42.8, 49.5, 52.5],
+    "adv_data/fmifgsm/inception_v3_beta3.8": [100.0, 76.0, 62.5, 60.5, 74.5, 32.3, 42.5, 49.2, 52.2],
+
 }
+
+
 
 # 定义模型顺序和目标模型
 all_models = [
@@ -55,9 +65,9 @@ def parse_data(data):
     rows = []
     for key, values in data.items():
         # 提取参数（如 eps=8, epoch=5 等）
-        param = re.search(r"(eps|epoch|num|beta)(\d+)", key)
+        param = re.search(r"(eps|epoch|num|beta)(\d+(\.\d+)?)", key)
         param_name = param.group(1)
-        param_value = int(param.group(2))
+        param_value = float(param.group(2))
 
         # 提取目标模型的成功率
         target_values = [values[i] for i in target_indices]

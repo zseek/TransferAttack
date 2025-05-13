@@ -21,7 +21,7 @@ class PGN(Attack):
         norm (str): 扰动范数类型（l2或linfty）
         loss (str): 损失函数类型
         device (torch.device): 计算设备
-        
+
     Official arguments:
         epsilon=16/255, alpha=epsilon/epoch=1.6/255, beta=3.0, gamma=0.5, num_neighbor=10, epoch=10, decay=1.
 
@@ -29,7 +29,7 @@ class PGN(Attack):
         python main.py --input_dir ./path/to/data --output_dir adv_data/pgn/resnet18 --attack pgn --model=resnet18
         python main.py --input_dir ./path/to/data --output_dir adv_data/pgn/resnet18 --eval
     """
-    
+
     def __init__(self, model_name, epsilon=16/255, alpha=1.6/255, beta=3.0, gamma=0.5, num_neighbor=10, epoch=10, decay=1., targeted=False,
                 random_start=False, norm='linfty', loss='crossentropy', device=None, attack='PGN', **kwargs):
         super().__init__(attack, model_name, epsilon, targeted, random_start, norm, loss, device)
@@ -96,6 +96,42 @@ class PGN(Attack):
 
             # 计算邻域梯度的加权平均
             averaged_gradient = self.get_averaged_gradient(data, delta, label)
+
+            # 更新动量（decay=1.0时为累积动量）
+            momentum = self.get_momentum(averaged_gradient, momentum)
+
+            # 根据动量更新扰动（并确保在epsilon范围内）
+            delta = self.update_delta(delta, data, momentum, self.alpha)
+
+        return delta.detach()  # 返回最终扰动
+
+    def test(self, data, label, **kwargs):
+
+        data = data.clone().detach().to(self.device)
+        label = label.clone().detach().to(self.device)
+        delta = self.init_delta(data)  # 初始化扰动（随机或零初始化）
+        momentum, averaged_gradient = 0, 0  # 初始化动量和平均梯度
+
+        # 迭代更新扰动
+        for _ in range(self.epoch):
+            # 计算邻域梯度的加权平均
+            averaged_gradient = 0
+            for _ in range(self.num_neighbor):
+                # 1. 随机生成邻域样本（在当前扰动delta周围添加均匀噪声）
+                x_near = self.transform(data + delta + torch.zeros_like(delta).uniform_(-self.zeta, self.zeta).to(self.device))
+                # 2. 计算邻域样本的梯度g1（当前点的梯度）
+                logits = self.get_logits(x_near)  # Calculate the output of the x_near
+                loss = self.get_loss(logits, label)  # Calculate the loss of the x_near
+                g_1 = self.get_grad(loss, delta)  # Calculate the gradient of the x_near
+                # 3. 预测下一步的候选样本x_next（基于梯度下降方向）
+                x_next = self.transform(x_near + self.alpha*(-g_1 / (torch.abs(g_1).mean(dim=(1,2,3), keepdim=True))))
+                # 4. 计算候选样本的梯度g2（预测点的梯度）
+                logits = self.get_logits(x_next)  # Calculate the output of the x_next
+                loss = self.get_loss(logits, label)  # Calculate the loss of the x_next
+                g_2 = self.get_grad(loss, delta)  # Calculate the gradient of the x_next
+                # 5. 累加加权梯度（gamma控制g1和g2的权重）
+                averaged_gradient += (1-self.gamma)*g_1 + self.gamma*g_2  # Calculate the gradients
+            averaged_gradient = averaged_gradient / self.num_neighbor  # 返回平均梯度
 
             # 更新动量（decay=1.0时为累积动量）
             momentum = self.get_momentum(averaged_gradient, momentum)
